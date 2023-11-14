@@ -1,0 +1,124 @@
+.viewImage{
+    width: 17rem;
+    height: 25rem;
+    box-shadow:  0px 0px 9px lightblue;
+    border-radius: 10px
+    
+}
+.movieContainer{
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    font-family: sans-serif;
+    color: white;    
+    background-color: #010d16;
+    box-shadow: 0 6px 22px grey;
+    padding: 10px 20px;
+    gap: 20px;
+    background-image: url("https://wallpaper.dog/large/17253186.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.movieData{
+    /* opacity: .5; */
+    display: grid;
+    gap: 1rem;
+    color: #93abb5;
+    font-family: inherit;
+}
+.title,.date{
+    padding: 5px 10px;
+}
+.overView{
+    display: grid;
+    gap: 1rem;
+    >h2,p{
+        padding-left: 10px;
+    }
+}
+.roureComponent{
+    position: relative;
+    display: grid;
+    margin-top: 5rem;
+    justify-content: space-between;
+}
+.randumCollection{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    overflow: auto;
+
+}
+.randumCollection::-webkit-scrollbar {
+    display: none;
+}
+.popularData{
+    display: grid;
+    width: 13rem;
+    gap: 1rem;
+    height: 24rem;
+    border-radius: 10px;
+    overflow-y: auto;
+    background-color: #010d16;
+    transition: 0.2s ease-out;
+}
+.popularData:hover{
+    box-shadow: 0px 10px 25px grey;
+    transform: translateY(-20px);
+    position: relative;
+    z-index: 200;
+}
+.popularData::-webkit-scrollbar{
+    display: none;
+}
+.movieDetails{
+    display: grid;
+    gap:10px;
+    padding: 10px 5px;
+    font-family: sans-serif;
+    color: #59bce3;
+
+}
+
+.Home{
+    color: #59bce3;
+}
+
+#events{
+    display: flex;
+    width: 15rem;
+    justify-content: end;
+    gap: 10px;
+    >.add{
+        padding: 10px 12px;
+        border-radius: 10px;
+        color: #0b698f;
+        font-size: 1rem;
+        border: 1px solid gray;
+        background-color:black;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    >.add:hover{
+        background-color: rgba(75, 74, 74, 0.5);
+        opacity: .7;
+        transition: .5s;
+        color: aqua;
+    }
+}
+
+/* .background{
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    top: 5rem;
+    height: 26.4rem;
+    background-color: white;
+    opacity: .9;
+} */

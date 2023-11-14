@@ -1,0 +1,100 @@
+.body{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+
+}
+.container{
+    margin: 10rem 2rem 2rem 2rem ;
+    margin-top: 7rem;
+    /* border: 10px solid #0e245e; */
+}
+img{
+    width: 100% ;
+    height: 100% ;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.card{
+    display: grid;
+    align-items: center;
+    width: 12rem;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 2px 0px #59bde3;
+    transition: 0.2s ease-out; 
+    cursor: pointer;  
+    padding-bottom: 10px; 
+}
+
+.card:hover{
+    transform: translateY(-25px);
+    box-shadow: 0 0px 29px #403b3b;
+}
+.card:hover:before{
+    opacity: 1;
+}
+.card:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+#title , #date{
+color: #aad8bf;
+padding: 0 7px;
+}
+#title{
+    font-size: 15px;
+    font-weight: 800;
+    height: 1.4rem;
+    overflow: hidden;
+}
+#date{
+    font-weight: 600;
+    font-size: 13px;
+}
+#rating{
+    font-size: 12px;
+    padding: 0 7px;
+}
+
+.card .fa-star{
+    color: gold;
+    font-size: 11px;
+}
+
+.options{
+    margin: 0 5px  ;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: transparent;
+    color: grey;
+    cursor: pointer;
+}
+
+.options:hover{
+    background: gray;
+    color: white;
+    opacity: .6;
+    border: none;
+    transition: .8s;
+}
+.fa-bookmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #e2e08d;
+    font-size: 2rem;
+}
