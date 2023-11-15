@@ -41,14 +41,19 @@ function Watchlist_Component() {
   const navigate=useNavigate();
   const homePage=()=>{
     navigate('/')
+  };
+  const hello=(data)=>{
+    navigate(`/Movie/${data.id}`);
   }
 
   return (
     <>
       <ToastContainer />
       <div className="end">
-      <i className="Home" onClick={homePage}>Home</i>
-        <button id="watchlistCollection" onClick={toggleWatchlist}>
+        <button className="watchlistCollection"> 
+        <i className="Home" onClick={homePage}>Home</i>
+        </button>
+        <button className="watchlistCollection" onClick={toggleWatchlist}>
         <i className="playlist">Playlist</i>
           <span id="count" style={{ color: "white" }}>
             {count}
@@ -62,7 +67,7 @@ function Watchlist_Component() {
             listdata.map((item) => (
               <div key={item.id}>
                 <div id="watchlist">
-                  <div id="movie">
+                  <div id="movie" onClick={()=>{hello(item)}}>
                     <img src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${item.backdroppath}`}></img>
                   </div>
                   <div id="details">

@@ -92,7 +92,7 @@
 #events{
     display: flex;
     width: 15rem;
-    justify-content: end;
+    padding-left: 10px;
     gap: 10px;
     >.add{
         padding: 10px 12px;

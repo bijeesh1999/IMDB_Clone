@@ -14,7 +14,7 @@ function Movie() {
 
   const { getcount } = useContext(Watchlist_Context);
 
-  //navigated movie component to get an purticular movie data
+  /*navigated movie component to get an purticular movie data*/
 
   const [add, setAdd] = useState(true);
   const [movie, setMovie] = useState([]);
@@ -46,8 +46,16 @@ function Movie() {
         backgroundColor: "black",
         color: "white",
         border: "1px solid green",
-        zIndex: "10",
-        position: "relative",
+      },
+    });
+
+    const exist = () =>
+    toast.warning("Movie already in the Watchlist", {
+      autoClose: 2000,
+      style: {
+        backgroundColor: "black",
+        color: "white",
+        border: "1px solid orange",
       },
     });
 
@@ -62,13 +70,16 @@ function Movie() {
     };
 
     try {
-      const response = await axios
+      const res = await axios
         .post("http://localhost:8080", dataToSend)
-        .then((res) => console.log("movie add secess"));
-      getcount();
-      notify();
-    } catch (error) {
-      console.error("Error:", error);
+        if(res.status === 201){
+          getcount();
+          console.log("movie add secess")
+          notify();
+        }
+      }
+     catch (error) {
+      exist();
     }
   };
 

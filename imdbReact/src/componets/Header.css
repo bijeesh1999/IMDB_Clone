@@ -17,7 +17,7 @@ img{
     background: transparent;
 }
 
-#watchlistCollection{
+.watchlistCollection{
     display: flex;
     border-radius: 100%;
     border: 0;
@@ -37,6 +37,9 @@ img{
         background: white;
         font-weight: 900;
         font-size: 10px;
+    }
+    >i{
+        font-size: 15px;
     }
 }
 .fa-thin{
@@ -63,12 +66,6 @@ input{
     top: 1rem;
     left: calc(50% - 15rem);
 }
-/* input[type="search"]::-webkit-search-cancel-button {
-    position: absolute;
-    right: 4rem;
-    font-size: 50px;
-    color: #79c8f2 !important;
-  } */
   .button{
     width: 2.5rem;
     height: 2.5rem;

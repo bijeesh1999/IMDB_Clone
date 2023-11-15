@@ -25,12 +25,17 @@ function writeList(watchlistData){
 const postWatchData=(req,res)=>{
     const watchlistData=readList();
     const {id,backdroppath,originaltitle,runtime,releasedate,status}=req.body;
-    watchlistData.push({id , backdroppath , originaltitle , runtime , releasedate , status});
-    console.log(req.body);
-    writeList(watchlistData);
-    
-    res.status(201).json({message:"blog created successfully",watchlistData})
-  };
+      if(watchlistData.some(data=>data.id === id)){
+       res.status(400).json('data already exist')
+      }
+      else{
+        watchlistData.push({id , backdroppath , originaltitle , runtime , releasedate , status});
+        console.log(req.body);
+        writeList(watchlistData);
+        
+        res.status(201).json({message:"blog created successfully",watchlistData})
+      }
+    };
 
 
 
