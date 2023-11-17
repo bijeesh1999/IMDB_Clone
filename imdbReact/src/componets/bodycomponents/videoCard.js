@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../bodycard.css";
 import { useContext } from "react";
-import { Watchlist_Context } from "../../context_Collection/watclist_Context/watchlist_Context";
-
-
+import { Watchlist_Context } from "../../context_Collection/watchlist_Context";
 
 /* this is one car for frond page popular collection*/
 function VideoCard(props) {
@@ -27,22 +25,20 @@ function VideoCard(props) {
   const [tru, setTru] = useState(false);
   const { listdata } = useContext(Watchlist_Context);
 
-  const watchlistData=()=>{
+  const watchlistData = () => {
     if (listdata && listdata.length > 0) {
-      const array = listdata.map(movie => movie.id);
-      const hasMovie = array.some(id => id === props.id);
+      const array = listdata.map((movie) => movie.id);
+      const hasMovie = array.some((id) => id === props.id);
       console.log(hasMovie);
       setTru(hasMovie);
-  }
-  }
-  
+    }
+  };
+
   useEffect(() => {
     watchlistData();
   }, [listdata, props.id]);
-  
-  // Rest of your component code...
-  
-// =============================================================
+
+  // =============================================================
   const navigateData = () => {
     navigate(`/Movie/${props.id}`);
   };
@@ -55,7 +51,18 @@ function VideoCard(props) {
             id="video"
             src={`https://www.themoviedb.org/t/p/w220_and_h330_face${props.poster_path}`}
           />
-         {tru ? <i className="fa-solid fa-bookmark true" style={{color:"green"}}></i>:<i className="fa-solid fa-bookmark false"></i>}
+          {tru ? (
+            <i
+              className="material-symbols-outlined bookmark"
+              style={{ color: "#13fb13" }}
+            >
+              bookmark_added
+            </i>
+          ) : (
+            <i className="material-symbols-outlined false bookmark">
+              bookmark_add
+            </i>
+          )}
         </div>
         <div style={{ display: "grid", gap: "10px" }}>
           <div id="title">{props.name || props.title}</div>

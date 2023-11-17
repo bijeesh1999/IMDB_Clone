@@ -5,6 +5,8 @@ import axios from "axios";
 
 export const Watchlist_Context = createContext();
 
+/* get all watchlist data */
+
 function Watchlist_Data({ children }) {
   const [count, setCount] = useState();
   const [listdata, setListData] = useState();
@@ -17,6 +19,14 @@ function Watchlist_Data({ children }) {
       setListData(data);
     });
   };
+  // ===============================
+
+  /* delete watchlist data */
+
+  
+
+
+
 
   useEffect(() => {
     getcount();

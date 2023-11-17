@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./watchlist.css";
 import axios from "axios";
 import { useContext } from "react";
-import { Watchlist_Context } from "../../context_Collection/watclist_Context/watchlist_Context";
+import { Watchlist_Context } from "../../context_Collection/watchlist_Context";
 import { useNavigate, } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

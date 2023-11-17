@@ -7,7 +7,7 @@ import { useNavigate, } from "react-router-dom";
 
 const PopulerCollection = ({searchDatas}) => {
   const [popular, setPopular] = useState([]);
-  const PopulerData = () => {
+  const populerData = () => {
     const endpoints =searchDatas ? searchData : popularMovies ;
     axios.get(endpoints,{
         params: {
@@ -18,12 +18,12 @@ const PopulerCollection = ({searchDatas}) => {
   };
 
   useEffect(() => {
-    PopulerData()
+    populerData()
   }, [searchDatas]);
 
   const navigate=useNavigate();
 
-const hello = (id) => {
+const movie = (id) => {
 axios.get(`http://localhost:8080/${id}`)
 .then((res) =>  {
     const status=res.data.res
@@ -41,7 +41,7 @@ axios.get(`http://localhost:8080/${id}`)
       {Array.isArray(popular) ? ( 
         popular.map((obj) => (
           <div key={obj.id}>
-            <div className="popularData" onClick={()=>{hello(obj.id)}} >
+            <div className="popularData" onClick={()=>{movie(obj.id)}} >
               <div className="imgCollector">
                 <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${obj.poster_path}`}/>
               </div>

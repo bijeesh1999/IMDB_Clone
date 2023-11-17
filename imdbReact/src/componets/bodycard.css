@@ -91,10 +91,10 @@ padding: 0 7px;
     border: none;
     transition: .8s;
 }
-.fa-bookmark{
+.bookmark{
     position: absolute;
     top: 0;
-    left: 0;
-    color: #e2e08d;
+    left:-3px;
+    color: #f7f22b;
     font-size: 2rem;
 }

@@ -1,10 +1,11 @@
 import React from "react";
 // import "";
 
-function Search({ onSearch }) {
+function Search({ handleOnSearch }) {
+  
   const handleSearch = (e) => {
     const searchQuery = e.target.value;
-    onSearch(searchQuery);
+    handleOnSearch(searchQuery);
   };
 
   return (

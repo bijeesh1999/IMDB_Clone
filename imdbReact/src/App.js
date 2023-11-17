@@ -7,16 +7,16 @@ import Search from "./componets/search/search";
 
 function App() {
   const [data, setData] = useState([]);
-  const [search, searchDatas] = useState("");
+  const [search, setSearch] = useState("");
   const [currentPage, setcurrentPage] = useState(1);
   const [totalPages, settotalPages] = useState(1);
 
   console.log(search);
   const searcHandle = (searchQuery) => {
-    searchDatas(searchQuery);
+    setSearch(searchQuery);
   };
 
-  const IMDB_Data = () => {
+  const imdbData = () => {
     const endpoints = search ? searchData : popularMovies;
     axios
       .get(endpoints, {
@@ -29,7 +29,7 @@ function App() {
         const { results, total_pages } = res.data;
         setData(results);
         settotalPages(total_pages);
-        console.log(total_pages);
+        console.log(results);
       })
       .catch((error) => {
         console.error("Axios Error:", error);
@@ -39,7 +39,7 @@ function App() {
   console.log(searchData);
 
   useEffect(() => {
-    IMDB_Data();
+    imdbData();
   }, [search, currentPage, totalPages]);
 
   const prevPage = () => {
@@ -55,8 +55,7 @@ function App() {
 
   return (
     <div id="wrapper">
-      <Search onSearch={searcHandle} />
-
+      <Search handleOnSearch={searcHandle} />
       <div className="container">
         <div className="body">
           {data.map((obj, index) => (
